@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">PubBuddy</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="splashScreen">splashScreen</string>
+    <string name="accountImage">accountImage</string>
+
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="info">Info</string>
+    <string name="account">Account</string>
+
+    <string name="minimum_pswd">Password Too Short</string>
+    <string name="auth_failed">Authentication Failed</string>
+
+    <string name="addImage">addImage</string>
+    <string name="deleteAccount">deleteAccount</string>
+    <string name="showEmail">showEmail</string>
+    <string name="myAccount">My Account</string>
+    <string name="logOut">logOut</string>
+
+    <string name="appWebsite">A few pints a day, keep reality away!</string>
+    <string name="appInfo">About App</string>
+
+    <string name="appInfoExtra">
+        PubBuddy is an app that lets you keep track of the beers you have enjoyed in the past.
+        It also gives you some recommendations and lets you favourite the beverages you enjoyed the most.
+        There are a number of new features coming soon!
+    </string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="searchBeersLbl">Recommendations</string>
+    <string name="favouritesBeerLbl">Favourites</string>
+    <string name="addABeerLbl">Beer Check In</string>
+
+    <string name="addBeerBtnLbl">Add</string>
+    <string name="saveBeerBtn">Save</string>
+
+    <string name="recentlyViewedLbl">List of Beverages</string>
+
+    <string name="beerNameLbl">Name :</string>
+    <string name="pubLbl">Pub :</string>
+    <string name="beerPriceLbl">Price :</string>
+    <string name="beerRatingLbl">Star Rating</string>
+
+    <string name="emptyMessageLbl">You have no beer\'s added, go have a beer!</string>
+    <string name="deleteBeersLbl">Delete Beers</string>
+
+    <string-array name="beerTypes">
+        <item>All Types</item>
+        <item>Favourites</item>
+        <item>\> 3\* Rating</item>
+    </string-array>
+
+</resources>

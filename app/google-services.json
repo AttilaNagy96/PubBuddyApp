@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "722356757014",
+    "firebase_url": "https://pubbuddy-wit.firebaseio.com",
+    "project_id": "pubbuddy-wit",
+    "storage_bucket": "pubbuddy-wit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722356757014:android:7ec053575fa95bc8",
+        "android_client_info": {
+          "package_name": "ie.wit.pubbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722356757014-cvl25v2c95dgu10cq1n44lf41r5q3a0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn8oDpYqKverKXQTOdUSwckgbtYnj94ZY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
