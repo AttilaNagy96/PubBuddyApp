@@ -19,7 +19,7 @@ public class Base extends AppCompatActivity {
 
     public PubBuddyApp app;
     public Bundle activityInfo; // Used for persistence (of sorts)
-    public BeerFragment beerFragment; // How we'll 'share' our List of Items between Activities
+    public BeerFragment beerFragment; // Used share list of items between Activities
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

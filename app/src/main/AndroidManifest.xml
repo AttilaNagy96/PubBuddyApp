@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ie.wit.pubbuddy">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name=".main.PubBuddyApp"
         android:allowBackup="true"
@@ -10,6 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCe0ICuraK7jdES9XQFgxoucmLMct0izGI" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name=".activities.Home"
             android:label="@string/app_name"
@@ -33,6 +46,24 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".activities.Video"
+            android:theme="@style/AppTheme.NoActionBar" />
+        />
+        <activity android:name=".realtimeDatabaseCRUD.UserFavs" />
+        <activity
+            android:name=".activities.Map"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.MapActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".google_sign_in.Google_Sign_in"/>
+            //android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.Contact"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.Recommendations"></activity>
     </application>
 
 </manifest>

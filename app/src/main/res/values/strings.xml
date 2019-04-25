@@ -24,12 +24,16 @@
 
     <string name="appInfoExtra">
         PubBuddy is an app that lets you keep track of the beers you have enjoyed in the past.
-        It also gives you some recommendations and lets you favourite the beverages you enjoyed the most.
-        There are a number of new features coming soon!
+        It can give you some recommendations but you may also create your own list if you wish to do so.
+        If you are a signed in user, your added beers are saved and you can update your list at any time in the future.
+        Our app has an integrated Google Map system that lets you search your local area or any other areas for pubs
+        and even get directions.
     </string>
 
     <string name="welcome">Welcome!</string>
     <string name="searchBeersLbl">Recommendations</string>
+    <string name="beveragesLbl">Todays List</string>
+    <string name="beersLabel">Temporary Beer List</string>
     <string name="favouritesBeerLbl">Favourites</string>
     <string name="addABeerLbl">Beer Check In</string>
 
@@ -43,13 +47,15 @@
     <string name="beerPriceLbl">Price :</string>
     <string name="beerRatingLbl">Star Rating</string>
 
-    <string name="emptyMessageLbl">You have no beer\'s added, go have a beer!</string>
+    <string name="emptyMessageLbl">You have no beers added</string>
     <string name="deleteBeersLbl">Delete Beers</string>
 
-    <string-array name="beerTypes">
-        <item>All Types</item>
-        <item>Favourites</item>
-        <item>\> 3\* Rating</item>
-    </string-array>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="submitButton">Send</string>
+
+    <string name="Google_Maps_API">AIzaSyCe0ICuraK7jdES9XQFgxoucmLMct0izGI</string>
+    <string name="Google_Maps_API2">AIzaSyAWZ6t7zFKroRTMwxo8qrM-95WyT2TISJo</string>
 
 </resources>

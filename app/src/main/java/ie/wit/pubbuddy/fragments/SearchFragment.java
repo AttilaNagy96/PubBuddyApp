@@ -35,6 +35,7 @@ public class SearchFragment extends BeerFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /*
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter
                 .createFromResource(activity, R.array.beerTypes,
                         android.R.layout.simple_spinner_item);
@@ -45,6 +46,7 @@ public class SearchFragment extends BeerFragment
         Spinner spinner = activity.findViewById(R.id.searchSpinner);
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(this);
+        */
 
         searchView = activity.findViewById(R.id.searchView);
         searchView.setQueryHint("Beverages your Beers Here");

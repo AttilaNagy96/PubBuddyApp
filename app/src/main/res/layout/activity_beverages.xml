@@ -10,16 +10,16 @@
         android:id="@+id/searchBarTV"
         android:layout_width="0dp"
         android:layout_height="21dp"
+        android:layout_marginBottom="388dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/searchBeersLbl"
-        android:textColor="@color/colorFontWhite"
+        android:text="@string/beersLabel"
         android:textAlignment="center"
+        android:textColor="@color/colorFontWhite"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchSpinner"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -41,13 +41,14 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="382dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBarTV">
+        app:layout_constraintTop_toBottomOf="@+id/searchBarTV"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/emptyList"
@@ -55,25 +56,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|center_horizontal"
             android:layout_marginTop="30dp"
-            android:text="@string/emptyMessageLbl"
+            android:text="@+id/emptyMessageLbl"
             android:textSize="12sp"
             app:layout_constraintHorizontal_bias="0.576"
             app:layout_constraintVertical_bias="0.533" />
     </FrameLayout>
-
-    <Spinner
-        android:id="@+id/searchSpinner"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
 
     <SearchView
         android:id="@+id/searchView"
@@ -86,7 +73,7 @@
         android:background="#fff"
         android:elevation="2dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/searchSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/searchBarTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -1,103 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.Home"
-    tools:showIn="@layout/activity_home">
+    tools:context=".activities.Home">
+    //tools:openDrawer="start"
+    //tools:showIn="@layout/activity_home">
 
-    <TextView
-        android:id="@+id/homeBarTV"
-        android:layout_width="374dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/welcome"
-        android:textColor="@color/colorFontWhite"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/searchBtn"
-        android:layout_width="370dp"
-        android:layout_height="90dp"
-        android:background="@color/colorPrimary"
-        android:drawableTop="@drawable/beverages72"
-        android:onClick="beverages"
-        android:text="@string/searchBeersLbl"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        <TextView
+            android:id="@+id/homeBarTV"
+            android:layout_width="374dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="108dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/welcome"
+            android:textAlignment="center"
+            android:textColor="@color/colorFontWhite"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/addBtn"
-        android:layout_width="370dp"
-        android:layout_height="90dp"
-        android:background="#f3b619"
-        android:drawableTop="@drawable/add72"
-        android:onClick="add"
-        android:text="@string/addABeerLbl"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394" />
+        <Button
+            android:id="@+id/beveragesBtn"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/ic_list_24dp"
+            android:onClick="beverages"
+            android:text="@string/beveragesLbl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.451" />
 
-    <Button
-        android:id="@+id/favouritesBtn"
-        android:layout_width="370dp"
-        android:layout_height="90dp"
-        android:background="@color/colorPrimary"
-        android:drawableTop="@drawable/favourites72"
-        android:onClick="favourites"
-        android:text="@string/favouritesBeerLbl"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="#f3b619"
+            android:drawableTop="@drawable/ic_add_black_72dp"
+            android:onClick="add"
+            android:text="@string/addABeerLbl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.451" />
 
-    <TextView
-        android:id="@+id/footer"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:background="@color/colorPrimaryDark"
-        android:paddingTop="5dp"
-        android:text="@string/appWebsite"
-        android:textColor="@color/colorFontWhite"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/recommenationsBtn"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="#f3b619"
+            android:drawableTop="@drawable/beverages72"
+            android:onClick="recommendations"
+            android:text="@string/searchBeersLbl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.807" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="302dp"
-        android:layout_height="73dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="Home page"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/favouriteBarTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/favouritesBtn"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/favourites72"
+            android:onClick="favourites"
+            android:text="@string/favouritesBeerLbl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.807" />
 
+        <TextView
+            android:id="@+id/footer"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:background="@color/colorPrimaryDark"
+            android:paddingTop="5dp"
+            android:text="@string/appWebsite"
+            android:textAlignment="center"
+            android:textColor="@color/colorFontWhite"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="302dp"
+            android:layout_height="73dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Home page"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toTopOf="@+id/favouriteBarTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+
+</android.support.v4.widget.DrawerLayout>

@@ -4,8 +4,10 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -24,19 +26,25 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.IOException;
+
 import ie.wit.pubbuddy.R;
+import ie.wit.pubbuddy.activities.Add;
 import ie.wit.pubbuddy.activities.Base;
 import ie.wit.pubbuddy.activities.Info;
+import ie.wit.pubbuddy.realtimeDatabaseCRUD.UserFavs;
 
 public class LoggedIn extends Base {
 
     private ImageView addImage;
+    private static final int PICK_IMAGE = 1;
+    Uri pickedImgUri;
+
     private Button logOut, deleteAccount;
     private TextView email;
     private FirebaseAuth auth;
     static int PReqCode = 1;
     static int REQUESTCODE = 1;
-    Uri pickedImgUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,18 +74,16 @@ public class LoggedIn extends Base {
 
         logOut = (Button) findViewById(R.id.logOut);
         deleteAccount = (Button) findViewById(R.id.deleteAccount);
-        addImage = findViewById(R.id.addImage);
+        addImage = (ImageView) findViewById(R.id.addImage);
 
         addImage.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
-                if (Build.VERSION.SDK_INT >= 22){
-                    CheckAndRequestForPermission();
-                }
-                else
-                {
-                    openGallery();
-                }
+            public void onClick(View v){
+                Intent gallery = new Intent();
+                gallery.setType("image/*");
+                gallery.setAction(Intent.ACTION_GET_CONTENT);
+
+                startActivityForResult(Intent.createChooser(gallery, "select picture"), PICK_IMAGE);
             }
         });
 
@@ -116,38 +122,19 @@ public class LoggedIn extends Base {
         });
     }
 
-    private void openGallery() {
-        //open gallery inent and wait for user to pick an image!
-        Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent,REQUESTCODE);
-    }
-
-    private void CheckAndRequestForPermission() {
-        if (ContextCompat.checkSelfPermission(LoggedIn.this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED){
-            if (ActivityCompat.shouldShowRequestPermissionRationale(LoggedIn.this, android.Manifest.permission.READ_EXTERNAL_STORAGE)){
-                Toast.makeText(LoggedIn.this, "Please accept for required permission", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                ActivityCompat.requestPermissions(LoggedIn.this,
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        PReqCode);
-            }
-        }
-        else
-            openGallery();
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == REQUESTCODE && data != null){
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK){
             //user has successfully picked an image - reference needs to be saved
             pickedImgUri = data.getData();
-            addImage.setImageURI(pickedImgUri);
+            try{
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),pickedImgUri);
+                addImage.setImageBitmap(bitmap);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
         }
     }
 
@@ -205,5 +192,9 @@ public class LoggedIn extends Base {
         if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
+    }
+
+    public void favBeers(View v) {
+        startActivity(new Intent(this, UserFavs.class));
     }
 }

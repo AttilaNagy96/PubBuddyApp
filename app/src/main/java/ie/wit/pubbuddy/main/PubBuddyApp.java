@@ -9,6 +9,7 @@ import ie.wit.pubbuddy.models.Beer;
 public class PubBuddyApp extends Application {
 
     public List<Beer> beerList = new ArrayList<>();
+    //public List<Beer2> beerList2 = new ArrayList<>;
 
     @Override
     public void onCreate()

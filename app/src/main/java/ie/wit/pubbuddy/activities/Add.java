@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+
 import ie.wit.pubbuddy.registration.LoggedIn;
 import ie.wit.pubbuddy.R;
 import ie.wit.pubbuddy.models.Beer;

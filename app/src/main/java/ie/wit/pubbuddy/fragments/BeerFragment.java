@@ -196,15 +196,15 @@ public class BeerFragment  extends ListFragment implements View.OnClickListener,
                         .nextInt(beerList.size()));
 
                 ((TextView) getActivity().findViewById(R.id.favouriteBeerName)).setText(randomBeer.beerName);
-                ((TextView) getActivity().findViewById(R.id.favouritePub)).setText(randomBeer.bar);
+                //((TextView) getActivity().findViewById(R.id.favouritePub)).setText(randomBeer.bar);
                 ((TextView) getActivity().findViewById(R.id.favouriteBeerPrice)).setText("€ " + randomBeer.price);
-                ((TextView) getActivity().findViewById(R.id.favouriteBeerRating)).setText(randomBeer.rating + " *");
+                //((TextView) getActivity().findViewById(R.id.favouriteBeerRating)).setText(randomBeer.rating + " *");
             }
             else {
                 ((TextView) getActivity().findViewById(R.id.favouriteBeerName)).setText("N/A");
-                ((TextView) getActivity().findViewById(R.id.favouritePub)).setText("N/A");
+                //((TextView) getActivity().findViewById(R.id.favouritePub)).setText("N/A");
                 ((TextView) getActivity().findViewById(R.id.favouriteBeerPrice)).setText("N/A");
-                ((TextView) getActivity().findViewById(R.id.favouriteBeerRating)).setText("N/A");
+                //((TextView) getActivity().findViewById(R.id.favouriteBeerRating)).setText("N/A");
             }
     }
 
